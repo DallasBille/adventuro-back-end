@@ -13,4 +13,8 @@ class Adventure < ApplicationRecord
         amount = donations.map{|donation| donation.amount}
         amount.sum
     end
+
+    # def percentage_funded
+    #     sum_amount / adventure.cost * 100
+    # end
 end

@@ -5,4 +5,15 @@ class Api::V1::DonationsController < ApplicationController
         render json: @donations
     end
 
+    def create
+        @donation = Donation.create(donation_params)
+        render json: @donation
+    end
+
+
+    private
+
+    def donation_params
+        params.permit(:user_id, :adventure_id, :amount)
+    end
 end

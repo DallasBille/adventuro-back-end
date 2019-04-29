@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
       resources :users, only: [:create, :index]
       resources :adventures, only: [:create, :show, :index]
-      resources :donations, only: [:index]
+      resources :donations, only: [:index, :show, :create]
 
       post '/auth', to: 'auth#create'
       get '/current_user', to: 'auth#show'

@@ -10,6 +10,9 @@ User.destroy_all
 Adventure.destroy_all
 Donation.destroy_all
 
+
+adventure_photos = ["https://i.imgur.com/TFPINv7.jpg","https://i.imgur.com/m2koHAN.jpg", "https://i.imgur.com/4Vsdok4.jpg"]
+
 mode = ["Bicycle", "Car", "MotorCycle", "Foot","Plane", "Moped", "Boat", "Other"]
 
 User.create(first_name: "Dallas", last_name: "Bille", email:"dallasbille@gmail.com", username: "dallas" , password: "dallas")
@@ -17,11 +20,11 @@ User.create(first_name: "Taran", last_name: "Causey", email:"tarancausey@gmail.c
 User.create(first_name: "Colin", last_name: "Webster", email:"colinwebster@gmail.com", username: "colin" , password: "colin")
 
 
-Adventure.create(user_id: 1, title: "Great Grand Adventure", mission: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", cost: rand(500..20000), mode: mode.sample)
+Adventure.create(user_id: 1, title: "Great Grand Adventure", mission: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", cost: rand(500..20000), mode: mode.sample, image: adventure_photos[0])
 
-Adventure.create(user_id: 2 , title: "A Mission From God", mission: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", cost: rand(500..20000), mode: mode.sample)
+Adventure.create(user_id: 2 , title: "A Mission From God", mission: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", cost: rand(500..20000), mode: mode.sample, image: adventure_photos[1])
 
-Adventure.create(user_id: 3, title: "Moped Across the Country", mission: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", cost: rand(500..20000), mode: mode.sample)
+Adventure.create(user_id: 3, title: "Moped Across the Country", mission: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", cost: rand(500..20000), mode: mode.sample, image: adventure_photos[3])
 
 Donation.create(user_id: 1, adventure_id: 1, amount: rand(10..200))
 Donation.create(user_id: 1, adventure_id: 2, amount: rand(10..200))

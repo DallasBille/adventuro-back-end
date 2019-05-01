@@ -15,6 +15,13 @@ class Api::V1::AdventuresController < ApplicationController
         render json: @adventure
     end
 
+    def update
+        @adventure = Adventure.find(params[:id])
+        if @adventure.update(adventure_params)
+            render json: @adventure
+        end
+    end
+
 
     private
 

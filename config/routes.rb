@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     namespace :v1 do
 
       resources :users, only: [:create, :index]
-      resources :adventures, only: [:create, :show, :index]
+      resources :adventures, only: [:create, :show, :index,:update]
       resources :donations, only: [:index, :show, :create]
 
       post '/auth', to: 'auth#create'

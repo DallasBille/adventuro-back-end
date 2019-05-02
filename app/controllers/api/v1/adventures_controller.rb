@@ -2,12 +2,12 @@ class Api::V1::AdventuresController < ApplicationController
 
     def index
         @adventures = Adventure.all
-        render json: @adventures
+        render :index
     end
 
     def show
         @adventure = Adventure.find(params[:id])
-        render json: @adventure
+        render :show
     end
 
     def create
@@ -26,6 +26,6 @@ class Api::V1::AdventuresController < ApplicationController
     private
 
     def adventure_params
-        params.require(:adventure).permit(:user_id,:mission, :description, :cost, :mode,:title)
+        params.require(:adventure).permit(:user_id,:mission, :description, :cost, :mode,:title, :imageURL)
     end
 end

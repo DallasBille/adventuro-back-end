@@ -11,8 +11,14 @@ class Api::V1::AdventuresController < ApplicationController
     end
 
     def create
-        @adventure = Adventure.create(adventure_params)
+        @adventure = Adventure.new(adventure_params)
+        byebug
+        if @adventure.save
         render json: @adventure
+        else
+        render json: @adventure.errors.full_messages
+        end
+        byebug
     end
 
     def update
@@ -26,6 +32,6 @@ class Api::V1::AdventuresController < ApplicationController
     private
 
     def adventure_params
-        params.require(:adventure).permit(:user_id,:mission, :description, :cost, :mode,:title, :imageURL)
+        params.require(:adventure).permit(:user_id,:mission, :description, :cost, :mode, :title, :image)
     end
 end

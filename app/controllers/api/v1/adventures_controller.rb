@@ -12,13 +12,11 @@ class Api::V1::AdventuresController < ApplicationController
 
     def create
         @adventure = Adventure.new(adventure_params)
-        byebug
         if @adventure.save
         render json: @adventure
         else
         render json: @adventure.errors.full_messages
         end
-        byebug
     end
 
     def update

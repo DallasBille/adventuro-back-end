@@ -16,11 +16,13 @@ class User < ApplicationRecord
     end
 
     def user_donations
-        Donation.all.select{|donation| donation.user_id == id}
-    end
+        donations = Donation.all.select{|donation| donation.user_id == id}
+        donations.map{|donation| {amount: donation.amount, adventure: donation.adventure.title, id: donation.adventure.id}}
+        end
 
     def donation_adventures
-        user_donations.map{|donation| donation.adventure}
+        donations = Donation.all.select{|donation| donation.user_id == id}
+        donations.map{|donation| donation.adventure}
     end
 
     # def adventure_title

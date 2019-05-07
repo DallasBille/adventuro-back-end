@@ -4,6 +4,7 @@ class Adventure < ApplicationRecord
     has_many :donations
     has_many :users, through: :donations
 
+
     def donation_amounts
         adventure_donations = Donation.all.select{|donation| donation.adventure_id == id}
     end

@@ -13,7 +13,7 @@ class Api::V1::AdventuresController < ApplicationController
     def create
         @adventure = Adventure.new(adventure_params)
         if @adventure.save
-        render json: @adventure
+        render :create
         else
         render json: @adventure.errors.full_messages
         end

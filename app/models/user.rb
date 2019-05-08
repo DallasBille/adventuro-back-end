@@ -6,6 +6,9 @@ class User < ApplicationRecord
 
     validates :username, presence: true , uniqueness: true
     validates :email, presence: true
+    validates :first_name, presence: true
+    validates :last_name, presence: true
+    # validates :password_digest, presence: true , uniqueness: true
 
     def full_name
         "#{first_name}" " #{last_name}"

@@ -4,7 +4,7 @@ class Donation < ApplicationRecord
 
     def curr_adventure
         {
-            donation: {id: self.id},
+            donation: {id: self.id, amount: self.amount, adventure: self.adventure.title},
             adventure: {
                 id: self.adventure.id,
                 cost: self.adventure.cost,

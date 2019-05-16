@@ -20,7 +20,7 @@ class User < ApplicationRecord
 
     def user_donations
         donations = Donation.all.select{|donation| donation.user_id == id}
-        donations.map{|donation| {amount: donation.amount, adventure: donation.adventure.title, id: donation.adventure.id}}
+        donations.map{|donation| {amount: donation.amount, adventure: donation.adventure.title, adventure_id: donation.adventure.id}}
         end
 
     def donation_adventures

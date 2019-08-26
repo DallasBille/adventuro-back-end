@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+    include Rails.application.routes.url_helpers
     has_secure_password
     has_many :adventures
     has_many :donations
@@ -14,9 +15,14 @@ class User < ApplicationRecord
         "#{first_name}" " #{last_name}"
     end
 
-    def user_adventures
-        Adventure.all.select {|adventure| adventure.user_id == id}
+    def adventures
+        Adventure.all
     end
+
+    def donations
+        Donation.all
+    end
+
 
     def user_donations
         donations = Donation.all.select{|donation| donation.user_id == id}
@@ -28,7 +34,4 @@ class User < ApplicationRecord
         donations.map{|donation| donation.adventure}
     end
 
-    # def adventure_title
-    #     donation_adventures.each{|adventure_title| adventure_title.title}
-    # end
 end

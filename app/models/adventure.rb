@@ -8,7 +8,6 @@ class Adventure < ApplicationRecord
     validates :title, presence: true
     validates :mission, presence: true
     validates :cost, presence: true
-    
 
 
     def donation_amounts

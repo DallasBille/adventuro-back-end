@@ -16,13 +16,9 @@ class User < ApplicationRecord
     end
 
     def adventures
-        Adventure.all
+        users_adventures = Adventure.all.select{|adventure| adventure.user_id == id}
+        users_adventures.map{|adventure| adventure}
     end
-
-    def donations
-        Donation.all
-    end
-
 
     def user_donations
         donations = Donation.all.select{|donation| donation.user_id == id}

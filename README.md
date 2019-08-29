@@ -1,24 +1,26 @@
-# README
+## About the Project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project is a Rails API that serves a React front end with User, Adventure, and Donation data. I use Active Storage to store photos and I use Postgres for a database
 
-Things you may want to cover:
+- Rails version
+  rails 5.2.3
+- Ruby version
+  ruby 2.5.3
+- System dependencies
+  gem 'rack-cors'
+  gem "jwt", "~> 2.1"
+  gem "active_model_serializers", "~> 0.10.9"
 
-* Ruby version
+##SetUp:
 
-* System dependencies
+1. Clone the repo
+2. Bundle Install
+3. rails db:migrate
+4. Feel free to create a user, adventure, and donation.
 
-* Configuration
+This will create data without photo's, but you can create them through the front end!
 
-* Database creation
+##To Do's
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. Create a seed file that adds photo object connected to the adventure.
+2. Create a Charity model, migration, and associations.
